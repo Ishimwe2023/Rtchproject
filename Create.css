@@ -1,0 +1,212 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    position: fixed;
+    background-color: #1b4b6f;
+    display: flex;
+    width: 100%;
+    box-shadow: 2px 4px 6px rgb(172, 242, 9),4px 3px 2px rgb(12, 46, 55);
+}
+.logo img{
+width: 100px;
+height: 80px;
+border-radius: 50%;
+}
+.header h2{
+    margin-left: 12cm;
+    margin-top: 1cm;
+    color: rgb(172, 242, 9);
+}
+.header-menu{
+    margin-top: 1cm;
+    margin-left: 11cm;
+    text-align: center;
+}
+.header-menu a{
+    margin-top: 0.5cm;
+    text-decoration: none;
+    color:rgb(172, 242, 9);
+    font-size: 1.2rem;
+    transition: 10s;
+}
+.header-menu a:hover{
+  border-bottom: 4px solid #162938;
+}
+.navbar{
+    background-color: #1b4b6f;
+    width: 25%;
+    box-shadow: 2px 4px 6px rgb(172, 242, 9),4px 3px 2px rgb(12, 46, 55);
+    margin-top: 3cm;
+    height: 14cm;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    position: fixed;
+}
+.contents{
+    display: flex;
+   
+    
+}
+.navbar a{
+    text-decoration: none;
+    color: rgb(172, 242, 9);
+    font-size: 1.5rem;
+    transition: 10s;
+    margin: 0.7cm 1cm;
+}
+.slide-contents{
+    margin-top: 3cm;
+    margin-left:10cm ;
+    
+}
+.slide-contents .img{
+    width: 25cm;
+    height: 14cm;
+    animation-name: image;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    background-size: cover;
+    background-image: url(img/download.jpeg);
+    border-radius: 20px;
+    box-shadow: 2px 4px 6px rgb(172, 242, 9),4px 3px 2px rgb(12, 46, 55);
+}
+@keyframes image{
+    0%{background-image: url(img/download.jpeg);}
+    20%{background-image: url(img/img1.jpg);}
+    40%{background-image: url(img/img2.jpg);}
+    60%{background-image: url(img/img3.jpg);}
+    80%{background-image: url(img/img4.jpg);}
+    100%{background-image: url(img/download\ \(5\).jpeg);}
+}
+.img-text{
+    text-align: center;
+}
+.img-text h2{
+    color: rgb(172, 242, 9);
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: bold;
+}
+.link{
+  margin-left: 9cm;
+    background-color: #162938;
+    border-radius: 30%;
+    width: 200px;
+}
+.link a{
+    text-decoration: none;
+    color:rgb(172, 242, 9) ;
+    font-size: 1.6rem;
+}
+.link a:hover{
+    border-bottom: 4px solid rgb(172, 242, 9);
+    border-bottom-left-radius: 20cm;
+    border-bottom-right-radius: 20cm;
+}
+.travel-heading{
+    color: #1b4b6f;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 0.5cm;
+}
+.card{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 1cm;
+    position: relative;
+    width: 150px;
+    margin-left: -0.8cm;
+}
+.img2{
+    border: 2px solid #162938;
+    position: relative;
+    width: 100%;
+}
+.img2 img{
+    width: 250px;
+}
+.text-content{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+}
+.card:hover .text-content{
+    bottom: 0;
+    height: 100%;
+}
+.text{
+    white-space: nowrap; 
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.footer{
+    background-color: #1b4b6f;
+    width: 100%;
+    height: 6cm;
+    position: sticky;
+    display: flex;
+}
+.contact{
+    width: 50%;
+    height: 6cm;
+    border-radius: 80%;
+    border-right: 10px solid rgb(172, 242, 9);
+}
+.location p{
+    text-align: center;
+    color: black;
+    font-size: 1.2rem;
+}
+.location{
+    width: 50%;
+    height: 6cm;
+    border-radius: 80%;
+    border-left: 10px solid rgb(172, 242, 9);
+}
+.contact img{
+    width: 60%;
+    height: 5cm;
+    border-radius: 30px;
+    margin-left: 2cm;
+   
+}
+.contact h2{
+    color: rgb(172, 242, 9);
+    text-align: center;
+    text-decoration: underline;
+    
+}
+/*Responsiveness*/
+@media (max-width:700px){
+    .header h2{
+        margin-left: 3cm;
+    }
+    .navbar{
+        position: absolute;
+    }
+    .slide-contents{
+        margin-left: 0.2cm;
+    }
+}
+.marquee{
+    color: #162938;
+    font-size: 1.3rem;
+    
+}
