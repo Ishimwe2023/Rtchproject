@@ -53,7 +53,7 @@ if($numrows==1){
     $_SESSION['c_id']=$cid;
     $_SESSION['username']=$names;
     echo "<script>alert('Well continue!!')</script>";
-    echo "<script>window.location='./customers/customer.php'</script>";
+   echo "<script>window.location='./customers/customer.php'</script>";
 }
  elseif($select==='User'){
     $result=mysqli_query($connect,"select * from agent where username='$uname' and password='$psw'");

@@ -37,7 +37,7 @@ if(!isset($cid)){
           //connection
           $connect=mysqli_connect("localhost","root","","ticket_reservation");
           //query
-          $done=mysqli_query($connect,"select r_id,description,time,date,b_plate_no from direction,route,buss where route.d_id=direction.d_id and route.b_id=buss.b_id");
+          $done=mysqli_query($connect,"select r_id,description,time,route.date,b_plate_no from direction,route,buss where route.d_id=direction.d_id and route.b_id=buss.b_id");
           while($data=mysqli_fetch_array($done)){
               ?>
 <div class="card">

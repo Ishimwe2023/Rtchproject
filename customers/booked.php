@@ -1,8 +1,8 @@
 <?php
 session_start();
 @$cid=$_SESSION['c_id'];
-$tid=$_SESSION['t_id'];
-$rid=$_SESSION['r_id'];
+@$tid=$_SESSION['t_id'];
+@$rid=$_SESSION['r_id'];
 if(!isset($cid)){
     header("location:../Login.php");
 }
@@ -38,7 +38,7 @@ if(!isset($cid)){
           //connection
           $connect=mysqli_connect("localhost","root","","ticket_reservation");
           //query
-          $done=mysqli_query($connect,"select tichet.status,description,time,date,b_plate_no,t_id,c_name from direction,buss,route,tichet,customers where route.d_id=direction.d_id and route.b_id=buss.b_id and tichet.c_id=customers.c_id 
+          $done=mysqli_query($connect,"select tichet.status,description,time,route.date,b_plate_no,t_id,c_name from direction,buss,route,tichet,customers where route.d_id=direction.d_id and route.b_id=buss.b_id and tichet.c_id=customers.c_id 
           and tichet.r_id=route.r_id and customers.c_id='$cid'");
           while($data=mysqli_fetch_array($done)){
               ?>

@@ -1,4 +1,13 @@
+<?php
+session_start();
+@$username=$_SESSION['username'];
+@$status=$_SESSION['status'];
+if(!isset($username))
+{
+    header("location:../Login.php");
+}
 
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

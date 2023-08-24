@@ -38,7 +38,10 @@ $connect=mysqli_connect("localhost","root","","ticket_reservation");
 @$go=$_POST['go'];
 //query
 if(isset($go)){
-    if($psw==$cpsw){ 
+    $sel=mysqli_query($connect,"select username from customers where username='$uname'");
+    $numrows=mysqli_num_rows($sel);
+    if($numrows==0){
+        if($psw==$cpsw){ 
         $result=mysqli_query($connect,"insert into customers values('','$n','$phone','$uname','$psw')");
     if($result){
         echo "<script>alert('Ok successfully!!')</script>";
@@ -47,6 +50,11 @@ if(isset($go)){
 }else{
     echo "<script>alert('Mis matched password')</script>";
 }
+    }
+    else{
+        echo "<script>alert('Username taken')</script>"; 
+    }
+    
    
 }
 ?>

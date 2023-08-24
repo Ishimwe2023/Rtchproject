@@ -101,6 +101,7 @@ $connect=mysqli_connect("localhost","root","","ticket_reservation");
 @$desc=$_POST['desc'];
 @$price=$_POST['price'];
 @$status=$_POST['status'];
+@$date=date('d/m/20y');
 @$add=$_POST['add'];
 //query
 if(isset($add)){

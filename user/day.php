@@ -1,4 +1,13 @@
+<?php
+session_start();
+@$username=$_SESSION['username'];
+@$status=$_SESSION['status'];
+if(!isset($username))
+{
+    header("location:../Login.php");
+}
 
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,13 +51,14 @@
           //connection
           $connect=mysqli_connect("localhost","root","","ticket_reservation");
           $date=date('d/m/20y');
-          $ok1=mysqli_query($connect,"select sum(price) as price from direction");
+          $ok1=mysqli_query($connect,"select sum(price) as price,date from direction");
           while($data1=mysqli_fetch_array($ok1)){
             $total=$data1['price'];
+            $date=$data1['date'];
         }
           //query
           $done=mysqli_query($connect,"select description,type,b_plate_no,price,route.date from buss,direction,route where route.b_id=buss.b_id and 
-          route.d_id=direction.d_id and date='$date'");
+          route.d_id=direction.d_id");
           while($data=mysqli_fetch_array($done)){
             ?>
             <tr>
@@ -56,7 +66,7 @@
                 <td><?php echo $data['type'];?></td>
                 <td><?php echo $data['b_plate_no'];?></td>
                 <td><?php echo $data['price'];?></td>
-                <td><?php echo $data['route.date'];?></td>
+                <td><?php echo $data['date'];?></td>
             </tr>
            
             <?php
